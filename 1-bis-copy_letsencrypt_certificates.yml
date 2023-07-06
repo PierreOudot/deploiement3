@@ -1,0 +1,15 @@
+- name: transfert letsencrypt certificate to appropriate location
+  hosts: webservers
+  vars:
+    - msg: "This is a local inline variable (not used)"
+  tasks:
+    - include_vars: variables.yml
+
+    - name: "transfert certificates directory contetnts"
+      become: true 
+      ansible.builtin.copy:
+        src: ./certificates/
+        dest: /etc/letsencrypt/live/{{ SITE_URL }}/
+        owner: root
+        group: root        
+        mode: 0644

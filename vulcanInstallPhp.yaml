@@ -1,0 +1,108 @@
+---
+- name: Set up vulcan website
+  hosts: toto
+  remote_user: root
+
+  tasks:  
+  - name: Install laravel required php package 
+    ansible.builtin.apt:   	
+      update_cache: yes # update apt
+      state: present
+      pkg:
+      - php8.1-fpm
+      - php-common
+      - php-curl
+      - php-json
+      - php-mbstring
+      - php-mysql
+      - php-sqlite3
+      - php-xml
+      - php-zip
+      - python3-pip
+      
+  - name: Install openssl
+    ansible.builtin.apt:
+      name: openssl
+      state: latest 
+      
+  - name: Install composer 2.4.2
+    shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.4.2
+    
+  - name: Add nodejs apt key
+    apt_key:
+      url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+      state: present
+
+  - name: Add nodejs 16.x ppa for apt repo
+    apt_repository:
+      repo: deb https://deb.nodesource.com/node_16.x jammy main
+      state: present 
+      update_cache: yes
+      
+      
+  - name: Install node
+    ansible.builtin.apt:
+      update_cache: yes
+      name: nodejs
+      state: present
+
+  - name: Install nginx 
+    ansible.builtin.apt:
+      name: nginx
+      state: latest
+      
+  - name: Install ufw
+    ansible.builtin.apt:
+      name: ufw
+      state: latest
+      
+  - name: Enable UFW
+    community.general.ufw:
+      state: enabled 	
+      
+  - name: Configure ufw openssh
+    community.general.ufw:
+      name: OpenSSH
+      rule: allow
+      
+  - name: Allow ufw http
+    community.general.ufw:
+      proto: tcp
+      rule: allow
+      port: 80
+      
+  - name: Allow ufw https
+    community.general.ufw:
+      proto: tcp
+      rule: allow
+      port: 443
+      
+  - name: create var/www/vulcanhotel dir
+    ansible.builtin.file:
+      path: /var/www/vulcan-hotel
+      state: directory
+      
+  - name: clone vulcan git repo
+    ansible.builtin.git:
+      repo: https://github.com/Parrots-in-the-Alps/vulcan_hotel.git
+      dest: /var/www/vulcan-hotel
+      clone: yes
+      update: yes
+  
+  - name: Composer update #optimized_autoload no dev true
+    community.general.composer:
+      command: install 
+      working_dir: /var/www/vulcan-hotel
+      arguments: composer require lock
+    environment:
+      COMPOSER_NO_INTERACTION: 1
+      COMPOSER_ALLOW_SUPERUSER: 1
+     
+      
+ 
+   
+   
+  
+      
+      
+

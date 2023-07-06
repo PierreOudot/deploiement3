@@ -1,0 +1,34 @@
+---
+# ./vars/name_vars.yml
+variable_file_name: "./vars/variables.yml"
+
+#List of packages to install on the server
+#see 1-New_Server_Setup.yml
+packages_list: ['php-zip','php-xml','python3-pip','npm','mysql-server','mysql-client','php-cli','php8.1-fpm','php-mysql','php-pgsql','php-sqlite3','php-curl','php-json','php-xml','php-mbstring','php-bcmath','composer','nginx','letsencrypt','python3-certbot-nginx','python3-pymysql','php-common']
+
+#Your Domain and sub-domains.... to be improve
+#Used in 2-Cerbot.yml but only subdomain_staging for now
+#subdomain_staging: "staging.mydomain.org"
+certbot_contact_mail: "vulcanFakeHotel@gmail.com"
+
+#Define the site to deploy can be:
+    #domain: "mydomain.org"
+    #subdomain_www: "wwww.mydomain.org"
+#USED by 2-Cerbot.yml  and 4-Create-Shared-Laravel-Structure.yml
+SITE_URL: 'vulcan-hotel.mom'
+SITE_ROOT_FOLDER: '/var/www'
+ #.env file variables
+APP_NAME: "Laravel"
+APP_KEY: "base64:gxXdlfxOT+hXpJ4ubHriFd4aOADdZnlWm26cMqjtnRw="
+
+#postgresql variables
+DB_NAME: "laravel_app"
+DB_USER: "db_vulcan_user"
+DB_PASS: "HJrd2HbQ9n7Una3lKv7noGcEi7Il4okG"
+
+#Repo information used in 4-Create-Shared-Laravel-Structure.yml
+REPO: "https://github.com/Parrots-in-the-Alps/vulcan_hotel"
+REPO_TAG: 'v1.0.0'
+
+laravel_version: '8.x'
+

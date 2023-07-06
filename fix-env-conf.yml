@@ -1,0 +1,17 @@
+- hosts: webservers
+  remote_user: root
+    
+  tasks:    
+    - include_vars: variables.yml
+# TODO: cleaning tasks
+    - name: Copy the .ENV file in shared folder
+      template:
+        src: .env.j2
+        dest: /var/www/{{ SITE_URL }}/shared/.env
+      become: true
+
+    - name: Copy the serverblock file 
+      template:
+        src: vulcan-hotel
+        dest: /etc/nginx/sites-available/{{ SITE_URL }}/
+      become: true 
