@@ -30,5 +30,5 @@ DB_PASS: "HJrd2HbQ9n7Una3lKv7noGcEi7Il4okG"
 REPO: "https://github.com/Parrots-in-the-Alps/vulcan_hotel"
 REPO_TAG: 'v1.0.0'
 
-laravel_version: '8.x'
+
 

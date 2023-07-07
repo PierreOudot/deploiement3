@@ -764,3 +764,357 @@ setting deprecation_warnings=False in ansible.cfg.
 2023-07-06 21:29:10,448 p=58953 u=rubp42 n=ansible | Create Symlink to storage ----------------------------------------------- 1.58s
 2023-07-06 21:29:10,448 p=58953 u=rubp42 n=ansible | Remove local storage ---------------------------------------------------- 1.57s
 2023-07-06 21:29:10,448 p=58953 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.04s
+2023-07-07 10:58:42,660 p=12303 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 10:58:42,907 p=12303 u=rubp42 n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2023-07-07 10:58:42,908 p=12303 u=rubp42 n=ansible | PLAY [web] *********************************************************************
+2023-07-07 10:58:42,908 p=12303 u=rubp42 n=ansible | skipping: no hosts matched
+2023-07-07 10:58:42,908 p=12303 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 10:58:42,908 p=12303 u=rubp42 n=ansible | vendredi 07 juillet 2023  10:58:42 +0200 (0:00:00.001)       0:00:00.001 ****** 
+2023-07-07 10:58:42,908 p=12303 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:00:47,131 p=12464 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:00:47,325 p=12464 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:00:47,336 p=12464 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:00:47,336 p=12464 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:00:47 +0200 (0:00:00.013)       0:00:00.013 ****** 
+2023-07-07 11:00:52,954 p=12464 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:00:52,995 p=12464 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:00:52,995 p=12464 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:00:52 +0200 (0:00:05.659)       0:00:05.672 ****** 
+2023-07-07 11:00:53,014 p=12464 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:00:53,030 p=12464 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:00:53,030 p=12464 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:00:53 +0200 (0:00:00.034)       0:00:05.706 ****** 
+2023-07-07 11:00:53,057 p=12464 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'repo' is undefined. 'repo' is undefined\n\nThe error appears to be in '/home/rubp42/Documents/machine cna/deploiement3/update.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: clone git repo\n      ^ here\n"}
+2023-07-07 11:00:53,059 p=12464 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:00:53,059 p=12464 u=rubp42 n=ansible | 51.15.218.187              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:00:53,059 p=12464 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:00:53 +0200 (0:00:00.029)       0:00:05.736 ****** 
+2023-07-07 11:00:53,059 p=12464 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:00:53,059 p=12464 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 5.66s
+2023-07-07 11:00:53,059 p=12464 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.03s
+2023-07-07 11:00:53,060 p=12464 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 0.03s
+2023-07-07 11:01:26,445 p=12495 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:01:26,621 p=12495 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:01:26,629 p=12495 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:01:26,629 p=12495 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:01:26 +0200 (0:00:00.008)       0:00:00.008 ****** 
+2023-07-07 11:01:30,175 p=12495 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:01:30,216 p=12495 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:01:30,216 p=12495 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:01:30 +0200 (0:00:03.587)       0:00:03.596 ****** 
+2023-07-07 11:01:30,247 p=12495 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:01:30,263 p=12495 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:01:30,263 p=12495 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:01:30 +0200 (0:00:00.046)       0:00:03.642 ****** 
+2023-07-07 11:01:30,290 p=12495 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'repo' is undefined. 'repo' is undefined\n\nThe error appears to be in '/home/rubp42/Documents/machine cna/deploiement3/update.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: clone git repo\n      ^ here\n"}
+2023-07-07 11:01:30,292 p=12495 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:01:30,292 p=12495 u=rubp42 n=ansible | 51.15.218.187              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:01:30,292 p=12495 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:01:30 +0200 (0:00:00.029)       0:00:03.672 ****** 
+2023-07-07 11:01:30,292 p=12495 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:01:30,292 p=12495 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 3.59s
+2023-07-07 11:01:30,292 p=12495 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.05s
+2023-07-07 11:01:30,293 p=12495 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 0.03s
+2023-07-07 11:02:35,962 p=12590 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:02:36,156 p=12590 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:02:36,164 p=12590 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:02:36,164 p=12590 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:02:36 +0200 (0:00:00.010)       0:00:00.010 ****** 
+2023-07-07 11:02:40,291 p=12590 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:02:40,310 p=12590 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:02:40,310 p=12590 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:02:40 +0200 (0:00:04.145)       0:00:04.155 ****** 
+2023-07-07 11:02:40,340 p=12590 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:02:40,346 p=12590 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:02:40,346 p=12590 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:02:40 +0200 (0:00:00.036)       0:00:04.191 ****** 
+2023-07-07 11:02:44,757 p=12590 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"changed": false, "cmd": "/usr/bin/git checkout --force 8.x", "msg": "Failed to checkout 8.x", "rc": 1, "stderr": "error: pathspec '8.x' did not match any file(s) known to git\n", "stderr_lines": ["error: pathspec '8.x' did not match any file(s) known to git"], "stdout": "", "stdout_lines": []}
+2023-07-07 11:02:44,759 p=12590 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:02:44,759 p=12590 u=rubp42 n=ansible | 51.15.218.187              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:02:44,759 p=12590 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:02:44 +0200 (0:00:04.413)       0:00:08.604 ****** 
+2023-07-07 11:02:44,759 p=12590 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:02:44,759 p=12590 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 4.41s
+2023-07-07 11:02:44,760 p=12590 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.15s
+2023-07-07 11:02:44,760 p=12590 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.04s
+2023-07-07 11:03:20,646 p=12644 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:03:20,840 p=12644 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:03:20,848 p=12644 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:03:20,848 p=12644 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:03:20 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:03:24,454 p=12644 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:03:24,470 p=12644 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:03:24,470 p=12644 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:03:24 +0200 (0:00:03.621)       0:00:03.631 ****** 
+2023-07-07 11:03:24,484 p=12644 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:03:24,497 p=12644 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:03:24,497 p=12644 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:03:24 +0200 (0:00:00.027)       0:00:03.658 ****** 
+2023-07-07 11:03:24,524 p=12644 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'laravel_version' is undefined. 'laravel_version' is undefined\n\nThe error appears to be in '/home/rubp42/Documents/machine cna/deploiement3/update.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: clone git repo\n      ^ here\n"}
+2023-07-07 11:03:24,525 p=12644 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:03:24,526 p=12644 u=rubp42 n=ansible | 51.15.218.187              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:03:24,526 p=12644 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:03:24 +0200 (0:00:00.028)       0:00:03.687 ****** 
+2023-07-07 11:03:24,526 p=12644 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:03:24,526 p=12644 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 3.62s
+2023-07-07 11:03:24,526 p=12644 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 0.03s
+2023-07-07 11:03:24,526 p=12644 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.03s
+2023-07-07 11:06:30,303 p=13011 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:06:30,487 p=13011 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:06:30,494 p=13011 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:06:30,494 p=13011 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:06:30 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:06:34,660 p=13011 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:06:34,707 p=13011 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:06:34,708 p=13011 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:06:34 +0200 (0:00:04.213)       0:00:04.222 ****** 
+2023-07-07 11:06:34,724 p=13011 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:06:34,741 p=13011 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:06:34,741 p=13011 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:06:34 +0200 (0:00:00.033)       0:00:04.256 ****** 
+2023-07-07 11:06:34,771 p=13011 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'laravel_version' is undefined. 'laravel_version' is undefined\n\nThe error appears to be in '/home/rubp42/Documents/machine cna/deploiement3/update.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: clone git repo\n      ^ here\n"}
+2023-07-07 11:06:34,773 p=13011 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:06:34,773 p=13011 u=rubp42 n=ansible | 51.15.218.187              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:06:34,773 p=13011 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:06:34 +0200 (0:00:00.032)       0:00:04.288 ****** 
+2023-07-07 11:06:34,774 p=13011 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:06:34,774 p=13011 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.21s
+2023-07-07 11:06:34,774 p=13011 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.03s
+2023-07-07 11:06:34,774 p=13011 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 0.03s
+2023-07-07 11:07:13,605 p=13064 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:07:13,797 p=13064 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:07:13,805 p=13064 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:07:13,805 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:13 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:07:17,316 p=13064 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:07:17,359 p=13064 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:07:17,359 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:17 +0200 (0:00:03.553)       0:00:03.563 ****** 
+2023-07-07 11:07:17,381 p=13064 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:07:17,396 p=13064 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:07:17,396 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:17 +0200 (0:00:00.036)       0:00:03.600 ****** 
+2023-07-07 11:07:22,528 p=13064 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:07:22,533 p=13064 u=rubp42 n=ansible | TASK [Create Symlink to .env] **************************************************
+2023-07-07 11:07:22,533 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:22 +0200 (0:00:05.137)       0:00:08.738 ****** 
+2023-07-07 11:07:24,291 p=13064 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:07:24,307 p=13064 u=rubp42 n=ansible | TASK [Install Laravel dependencies] ********************************************
+2023-07-07 11:07:24,308 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:24 +0200 (0:00:01.774)       0:00:10.512 ****** 
+2023-07-07 11:07:30,591 p=13064 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:07:30,606 p=13064 u=rubp42 n=ansible | TASK [Check for package.json] **************************************************
+2023-07-07 11:07:30,606 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:30 +0200 (0:00:06.298)       0:00:16.810 ****** 
+2023-07-07 11:07:32,282 p=13064 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:07:32,301 p=13064 u=rubp42 n=ansible | TASK [install front-end project's dependencies in the project] *****************
+2023-07-07 11:07:32,301 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:32 +0200 (0:00:01.695)       0:00:18.505 ****** 
+2023-07-07 11:07:46,727 p=13064 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:07:46,743 p=13064 u=rubp42 n=ansible | TASK [Create Symlink to storage] ***********************************************
+2023-07-07 11:07:46,743 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:46 +0200 (0:00:14.441)       0:00:32.947 ****** 
+2023-07-07 11:07:48,362 p=13064 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "msg": "refusing to convert from directory to symlink for /var/www/vulcan-hotel.mom/releases/v2.0/storage", "owner": "root", "path": "/var/www/vulcan-hotel.mom/releases/v2.0/storage", "size": 4096, "state": "directory", "uid": 0}
+2023-07-07 11:07:48,363 p=13064 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:07:48,363 p=13064 u=rubp42 n=ansible | 51.15.218.187              : ok=7    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:07:48 +0200 (0:00:01.620)       0:00:34.568 ****** 
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | install front-end project's dependencies in the project ---------------- 14.44s
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | Install Laravel dependencies -------------------------------------------- 6.30s
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 5.14s
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 3.55s
+2023-07-07 11:07:48,364 p=13064 u=rubp42 n=ansible | Create Symlink to .env -------------------------------------------------- 1.77s
+2023-07-07 11:07:48,365 p=13064 u=rubp42 n=ansible | Check for package.json -------------------------------------------------- 1.70s
+2023-07-07 11:07:48,365 p=13064 u=rubp42 n=ansible | Create Symlink to storage ----------------------------------------------- 1.62s
+2023-07-07 11:07:48,365 p=13064 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.04s
+2023-07-07 11:16:56,225 p=13591 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:16:56,418 p=13591 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:16:56,426 p=13591 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:16:56,426 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:16:56 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:17:00,757 p=13591 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:17:00,810 p=13591 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:17:00,810 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:00 +0200 (0:00:04.384)       0:00:04.394 ****** 
+2023-07-07 11:17:00,829 p=13591 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:17:00,842 p=13591 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:17:00,842 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:00 +0200 (0:00:00.032)       0:00:04.426 ****** 
+2023-07-07 11:17:05,866 p=13591 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:17:05,880 p=13591 u=rubp42 n=ansible | TASK [Create Symlink to .env] **************************************************
+2023-07-07 11:17:05,880 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:05 +0200 (0:00:05.038)       0:00:09.464 ****** 
+2023-07-07 11:17:07,516 p=13591 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:17:07,533 p=13591 u=rubp42 n=ansible | TASK [Install Laravel dependencies] ********************************************
+2023-07-07 11:17:07,533 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:07 +0200 (0:00:01.652)       0:00:11.117 ****** 
+2023-07-07 11:17:13,719 p=13591 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:17:13,739 p=13591 u=rubp42 n=ansible | TASK [Check for package.json] **************************************************
+2023-07-07 11:17:13,739 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:13 +0200 (0:00:06.205)       0:00:17.323 ****** 
+2023-07-07 11:17:15,456 p=13591 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:17:15,474 p=13591 u=rubp42 n=ansible | TASK [install front-end project's dependencies in the project] *****************
+2023-07-07 11:17:15,475 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:15 +0200 (0:00:01.735)       0:00:19.058 ****** 
+2023-07-07 11:17:29,350 p=13591 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:17:29,368 p=13591 u=rubp42 n=ansible | TASK [Remove local storage] ****************************************************
+2023-07-07 11:17:29,368 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:29 +0200 (0:00:13.893)       0:00:32.951 ****** 
+2023-07-07 11:17:29,385 p=13591 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'app_dir' is undefined. 'app_dir' is undefined\n\nThe error appears to be in '/home/rubp42/Documents/machine cna/deploiement3/update.yml': line 42, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: Remove local storage\n      ^ here\n"}
+2023-07-07 11:17:29,387 p=13591 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:17:29,387 p=13591 u=rubp42 n=ansible | 51.15.218.187              : ok=7    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:17:29,388 p=13591 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:17:29 +0200 (0:00:00.019)       0:00:32.971 ****** 
+2023-07-07 11:17:29,388 p=13591 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:17:29,388 p=13591 u=rubp42 n=ansible | install front-end project's dependencies in the project ---------------- 13.89s
+2023-07-07 11:17:29,388 p=13591 u=rubp42 n=ansible | Install Laravel dependencies -------------------------------------------- 6.21s
+2023-07-07 11:17:29,388 p=13591 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 5.04s
+2023-07-07 11:17:29,388 p=13591 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.38s
+2023-07-07 11:17:29,389 p=13591 u=rubp42 n=ansible | Check for package.json -------------------------------------------------- 1.74s
+2023-07-07 11:17:29,389 p=13591 u=rubp42 n=ansible | Create Symlink to .env -------------------------------------------------- 1.65s
+2023-07-07 11:17:29,389 p=13591 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.03s
+2023-07-07 11:17:29,389 p=13591 u=rubp42 n=ansible | Remove local storage ---------------------------------------------------- 0.02s
+2023-07-07 11:18:49,965 p=13751 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:18:50,145 p=13751 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:18:50,152 p=13751 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:18:50,152 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:18:50 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:18:54,445 p=13751 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:18:54,499 p=13751 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:18:54,500 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:18:54 +0200 (0:00:04.347)       0:00:04.356 ****** 
+2023-07-07 11:18:54,520 p=13751 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:18:54,538 p=13751 u=rubp42 n=ansible | TASK [clone git repo] **********************************************************
+2023-07-07 11:18:54,538 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:18:54 +0200 (0:00:00.038)       0:00:04.395 ****** 
+2023-07-07 11:18:59,204 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:18:59,210 p=13751 u=rubp42 n=ansible | TASK [Create Symlink to .env] **************************************************
+2023-07-07 11:18:59,210 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:18:59 +0200 (0:00:04.671)       0:00:09.066 ****** 
+2023-07-07 11:19:00,920 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:00,933 p=13751 u=rubp42 n=ansible | TASK [Install Laravel dependencies] ********************************************
+2023-07-07 11:19:00,934 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:00 +0200 (0:00:01.723)       0:00:10.790 ****** 
+2023-07-07 11:19:08,463 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:08,478 p=13751 u=rubp42 n=ansible | TASK [Check for package.json] **************************************************
+2023-07-07 11:19:08,478 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:08 +0200 (0:00:07.544)       0:00:18.334 ****** 
+2023-07-07 11:19:10,163 p=13751 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:19:10,169 p=13751 u=rubp42 n=ansible | TASK [install front-end project's dependencies in the project] *****************
+2023-07-07 11:19:10,169 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:10 +0200 (0:00:01.691)       0:00:20.025 ****** 
+2023-07-07 11:19:23,867 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:23,873 p=13751 u=rubp42 n=ansible | TASK [Remove local storage] ****************************************************
+2023-07-07 11:19:23,873 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:23 +0200 (0:00:13.704)       0:00:33.730 ****** 
+2023-07-07 11:19:25,560 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:25,569 p=13751 u=rubp42 n=ansible | TASK [Create Symlink to storage] ***********************************************
+2023-07-07 11:19:25,569 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:25 +0200 (0:00:01.695)       0:00:35.425 ****** 
+2023-07-07 11:19:27,363 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:27,370 p=13751 u=rubp42 n=ansible | TASK [Change ownership] ********************************************************
+2023-07-07 11:19:27,370 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:27 +0200 (0:00:01.801)       0:00:37.227 ****** 
+2023-07-07 11:19:30,265 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:30,280 p=13751 u=rubp42 n=ansible | TASK [Run database migrations] *************************************************
+2023-07-07 11:19:30,281 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:30 +0200 (0:00:02.910)       0:00:40.137 ****** 
+2023-07-07 11:19:34,141 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:34,155 p=13751 u=rubp42 n=ansible | TASK [Run php Artisan commands optimize] ***************************************
+2023-07-07 11:19:34,155 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:34 +0200 (0:00:03.874)       0:00:44.012 ****** 
+2023-07-07 11:19:36,641 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:36,656 p=13751 u=rubp42 n=ansible | TASK [Run php Artisan commands config:cache] ***********************************
+2023-07-07 11:19:36,656 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:36 +0200 (0:00:02.500)       0:00:46.512 ****** 
+2023-07-07 11:19:39,112 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:39,127 p=13751 u=rubp42 n=ansible | TASK [Run php Artisan commands route:cache] ************************************
+2023-07-07 11:19:39,128 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:39 +0200 (0:00:02.471)       0:00:48.984 ****** 
+2023-07-07 11:19:42,099 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:42,105 p=13751 u=rubp42 n=ansible | TASK [Run php Artisan commands view:clear] *************************************
+2023-07-07 11:19:42,105 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:42 +0200 (0:00:02.977)       0:00:51.961 ****** 
+2023-07-07 11:19:44,681 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:44,686 p=13751 u=rubp42 n=ansible | TASK [Run php Artisan commands config:cache] ***********************************
+2023-07-07 11:19:44,686 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:44 +0200 (0:00:02.581)       0:00:54.543 ****** 
+2023-07-07 11:19:47,218 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:19:47,224 p=13751 u=rubp42 n=ansible | TASK [build production] ********************************************************
+2023-07-07 11:19:47,224 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:19:47 +0200 (0:00:02.538)       0:00:57.081 ****** 
+2023-07-07 11:20:20,118 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:20:20,124 p=13751 u=rubp42 n=ansible | TASK [Swith current site to new version] ***************************************
+2023-07-07 11:20:20,124 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:20:20 +0200 (0:00:32.899)       0:01:29.980 ****** 
+2023-07-07 11:20:21,711 p=13751 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:20:21,762 p=13751 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:20:21,762 p=13751 u=rubp42 n=ansible | 51.15.218.187              : ok=18   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:20:21 +0200 (0:00:01.638)       0:01:31.619 ****** 
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | build production ------------------------------------------------------- 32.90s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | install front-end project's dependencies in the project ---------------- 13.70s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Install Laravel dependencies -------------------------------------------- 7.54s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | clone git repo ---------------------------------------------------------- 4.67s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.35s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Run database migrations ------------------------------------------------- 3.87s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Run php Artisan commands route:cache ------------------------------------ 2.98s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Change ownership -------------------------------------------------------- 2.91s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Run php Artisan commands view:clear ------------------------------------- 2.58s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Run php Artisan commands config:cache ----------------------------------- 2.54s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Run php Artisan commands optimize --------------------------------------- 2.50s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Run php Artisan commands config:cache ----------------------------------- 2.47s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Create Symlink to storage ----------------------------------------------- 1.80s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Create Symlink to .env -------------------------------------------------- 1.72s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Remove local storage ---------------------------------------------------- 1.70s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Check for package.json -------------------------------------------------- 1.69s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | Swith current site to new version --------------------------------------- 1.64s
+2023-07-07 11:20:21,763 p=13751 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.04s
+2023-07-07 11:25:44,593 p=14368 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:25:44,754 p=14368 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:25:44,764 p=14368 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:25:44,764 p=14368 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:25:44 +0200 (0:00:00.011)       0:00:00.011 ****** 
+2023-07-07 11:25:49,051 p=14368 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:25:49,097 p=14368 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:25:49,097 p=14368 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:25:49 +0200 (0:00:04.332)       0:00:04.344 ****** 
+2023-07-07 11:25:49,117 p=14368 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:25:49,125 p=14368 u=rubp42 n=ansible | TASK [Remove local storage] ****************************************************
+2023-07-07 11:25:49,125 p=14368 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:25:49 +0200 (0:00:00.027)       0:00:04.372 ****** 
+2023-07-07 11:25:49,152 p=14368 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'laravel_version' is undefined. 'laravel_version' is undefined\n\nThe error appears to be in '/home/rubp42/Documents/machine cna/deploiement3/rollback': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: Remove local storage\n      ^ here\n"}
+2023-07-07 11:25:49,153 p=14368 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:25:49,153 p=14368 u=rubp42 n=ansible | 51.15.218.187              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:25:49,153 p=14368 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:25:49 +0200 (0:00:00.028)       0:00:04.400 ****** 
+2023-07-07 11:25:49,153 p=14368 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:25:49,153 p=14368 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.33s
+2023-07-07 11:25:49,154 p=14368 u=rubp42 n=ansible | Remove local storage ---------------------------------------------------- 0.03s
+2023-07-07 11:25:49,154 p=14368 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.03s
+2023-07-07 11:27:43,415 p=14531 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:27:43,541 p=14531 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:27:43,548 p=14531 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:27:43,549 p=14531 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:27:43 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:27:47,653 p=14531 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:27:47,706 p=14531 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:27:47,706 p=14531 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:27:47 +0200 (0:00:04.157)       0:00:04.166 ****** 
+2023-07-07 11:27:47,733 p=14531 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:27:47,748 p=14531 u=rubp42 n=ansible | TASK [Remove local storage] ****************************************************
+2023-07-07 11:27:47,748 p=14531 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:27:47 +0200 (0:00:00.042)       0:00:04.208 ****** 
+2023-07-07 11:27:49,406 p=14531 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:27:49,423 p=14531 u=rubp42 n=ansible | TASK [Create Symlink to storage] ***********************************************
+2023-07-07 11:27:49,423 p=14531 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:27:49 +0200 (0:00:01.674)       0:00:05.883 ****** 
+2023-07-07 11:27:50,947 p=14531 u=rubp42 n=ansible | fatal: [51.15.218.187]: FAILED! => {"changed": false, "msg": "Error while linking: [Errno 2] No such file or directory: b'/var/www/vulcan-hotel.mom/shared/storage' -> b'/var/www/vulcan-hotel.mom/releases/v1.0/storage'", "path": "/var/www/vulcan-hotel.mom/releases/v1.0/storage"}
+2023-07-07 11:27:50,949 p=14531 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:27:50,949 p=14531 u=rubp42 n=ansible | 51.15.218.187              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:27:50,949 p=14531 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:27:50 +0200 (0:00:01.526)       0:00:07.409 ****** 
+2023-07-07 11:27:50,949 p=14531 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:27:50,950 p=14531 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.16s
+2023-07-07 11:27:50,950 p=14531 u=rubp42 n=ansible | Remove local storage ---------------------------------------------------- 1.67s
+2023-07-07 11:27:50,950 p=14531 u=rubp42 n=ansible | Create Symlink to storage ----------------------------------------------- 1.53s
+2023-07-07 11:27:50,950 p=14531 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.04s
+2023-07-07 11:32:04,178 p=14759 u=rubp42 n=ansible | [DEPRECATION WARNING]: [defaults]callback_whitelist option, normalizing names 
+to new standard, use callbacks_enabled instead. This feature will be removed 
+from ansible-core in version 2.15. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2023-07-07 11:32:04,310 p=14759 u=rubp42 n=ansible | PLAY [webservers] **************************************************************
+2023-07-07 11:32:04,317 p=14759 u=rubp42 n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-07 11:32:04,317 p=14759 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:32:04 +0200 (0:00:00.009)       0:00:00.009 ****** 
+2023-07-07 11:32:08,400 p=14759 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:32:08,419 p=14759 u=rubp42 n=ansible | TASK [include_vars] ************************************************************
+2023-07-07 11:32:08,419 p=14759 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:32:08 +0200 (0:00:04.101)       0:00:04.111 ****** 
+2023-07-07 11:32:08,438 p=14759 u=rubp42 n=ansible | ok: [51.15.218.187]
+2023-07-07 11:32:08,444 p=14759 u=rubp42 n=ansible | TASK [Remove local storage] ****************************************************
+2023-07-07 11:32:08,444 p=14759 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:32:08 +0200 (0:00:00.025)       0:00:04.136 ****** 
+2023-07-07 11:32:10,157 p=14759 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:32:10,173 p=14759 u=rubp42 n=ansible | TASK [Create Symlink to storage] ***********************************************
+2023-07-07 11:32:10,174 p=14759 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:32:10 +0200 (0:00:01.729)       0:00:05.865 ****** 
+2023-07-07 11:32:11,874 p=14759 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:32:11,891 p=14759 u=rubp42 n=ansible | TASK [Swith current site to new version] ***************************************
+2023-07-07 11:32:11,891 p=14759 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:32:11 +0200 (0:00:01.717)       0:00:07.582 ****** 
+2023-07-07 11:32:13,631 p=14759 u=rubp42 n=ansible | changed: [51.15.218.187]
+2023-07-07 11:32:13,653 p=14759 u=rubp42 n=ansible | PLAY RECAP *********************************************************************
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | 51.15.218.187              : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | vendredi 07 juillet 2023  11:32:13 +0200 (0:00:01.762)       0:00:09.345 ****** 
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | =============================================================================== 
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | Gathering Facts --------------------------------------------------------- 4.10s
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | Swith current site to new version --------------------------------------- 1.76s
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | Remove local storage ---------------------------------------------------- 1.73s
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | Create Symlink to storage ----------------------------------------------- 1.72s
+2023-07-07 11:32:13,654 p=14759 u=rubp42 n=ansible | include_vars ------------------------------------------------------------ 0.03s

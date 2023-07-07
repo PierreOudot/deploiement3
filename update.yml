@@ -1,36 +1,100 @@
-- hosts: web
-  vars:
-    - laravel_version: 10.x
+- hosts: webservers
+  remote_user: root
+  vars: # ansible-playbook update.yml --extra-vars "laravel_version=v2.0" -f 10
   tasks:
     - include_vars: variables.yml
           
-    - name: Fetch git repo
+    - name: clone git repo
       git:
-        repo: "{{ repo }}"
-        dest: /var/www/laravel
+        repo: "{{ REPO }}"
+        dest: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"
         version: "{{ laravel_version }}"
+        key_file: /root/.ssh/id_rsa
+        accept_hostkey: yes
       become: true
+
+    - name: Create Symlink to .env
+      file:
+        src: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/shared/.env"
+        dest: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/.env"
+        state: link
       
     - name: Install Laravel dependencies
       composer:
         command: install
-        working_dir: /var/www/laravel
+        working_dir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"
       environment:
         COMPOSER_NO_INTERACTION: "1"
         COMPOSER_ALLOW_SUPERUSER: "1"        
       become: true
-            
-    - name: GIT pull
-      become: true
-      tags:
-       - git_pull
-      git:
-       repo: "{{ repo }}"
-       dest: /var/www/laravel
-       update: yes
-       clone: no
-       version: "{{ laravel_version }}"
 
-    - name: Install packages based on package.json.
-      npm:
-        path: /var/www/laravel
+    - name: Check for package.json
+      ansible.builtin.stat:
+        path: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/package.json"
+      register: packagejson
+
+    - name: install front-end project's dependencies in the project
+      ansible.builtin.command: npm install
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"
+      when: packagejson.stat.exists
+
+    - name: Remove local storage
+      file:
+        path: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/storage"
+        state: absent
+
+    - name: Create Symlink to storage
+      file:
+        src: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/shared/storage"
+        dest: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/storage"
+        state: link
+        
+    - name: Change ownership
+      file:
+        path: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: 0775
+        recurse: yes       
+
+    - name: Run database migrations
+      command: "php artisan migrate --no-interaction --force" 
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"
+          
+    - name: Run php Artisan commands optimize
+      command: "php artisan optimize" 
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"   
+ 
+    - name: Run php Artisan commands config:cache
+      command: "php artisan config:cache" 
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"   
+    - name: Run php Artisan commands route:cache
+      command: "php artisan route:cache" 
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"   
+    - name: Run php Artisan commands view:clear
+      command: "php artisan view:clear" 
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"   
+        
+    - name: Run php Artisan commands config:cache
+      command: "php artisan config:cache" 
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"    
+
+    - name: build production 
+      ansible.builtin.command: npm run prod
+      args:
+        chdir: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}"
+      when: packagejson.stat.exists 
+    
+    - name: Swith current site to new version
+      file:
+        src: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/public"
+        dest: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/shared/public"        
+        state: link

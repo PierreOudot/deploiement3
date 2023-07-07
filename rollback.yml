@@ -1,0 +1,23 @@
+- hosts: webservers
+  remote_user: root
+  vars: # ansible-playbook update.yml --extra-vars "laravel_version=v1.0.0" -f 10
+  tasks:
+    - include_vars: variables.yml
+
+    - name: Remove local storage
+      file:
+        path: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/storage"
+        state: absent
+
+    - name: Create Symlink to storage
+      file:
+        src: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/shared/storage"
+        dest: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/storage"
+        state: link
+
+
+    - name: Swith current site to new version
+      file:
+        src: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/releases/{{ laravel_version }}/public"
+        dest: "{{ SITE_ROOT_FOLDER }}/{{ SITE_URL }}/shared/public"        
+        state: link
